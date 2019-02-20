@@ -26,12 +26,7 @@ static GLfloat vertices[42]={
   30.0, 30.0,  0.0, /* 6 */
   30.0,  0.0,  0.0, /* 7 */
   -30.0,   0.0,  0.0, /* 8 */
-  30.0, 30.0, 30.0 , /* 9 */
-  0.0, 60.0, 30.0, /* 10 */
-  0.0, 60.0, 0.0, /* 11 */
-  30.0, 60.0, 0.0, /* 12 */
-  30.0, 60.0, 30.0 /* 13 */
-
+  30.0, 30.0, 30.0  /* 9 */
 
 };
 
@@ -41,7 +36,7 @@ static GLubyte esquerdaIndices[]  = {0,5,8,4};
 static GLubyte direitaIndices[]   = {3,7,6,9};
 static GLubyte topoIndices[]      = {0,1,6,5};
 static GLubyte fundoIndices[]     = {3,4,8,7};
-static GLubyte teste[]            = {10,11,12,13};
+
 
 
 static int eixoy, eixox;
@@ -103,8 +98,7 @@ void display(void){
   //glDrawElements(GL_QUADS, 4, GL_UNSIGNED_BYTE, fundoIndices);
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, fundoIndices);
 
-    glColor3f (CANELA); /* topo */
-  glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, teste);
+
 
 
   glDisableClientState (GL_VERTEX_ARRAY);
