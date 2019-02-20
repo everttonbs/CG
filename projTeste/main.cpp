@@ -37,6 +37,11 @@ static GLubyte direitaIndices[]   = {3,7,6,9};
 static GLubyte topoIndices[]      = {0,1,6,5};
 static GLubyte fundoIndices[]     = {3,4,8,7};
 
+static GLubyte fundoTrian[]       = {11,6,12};
+static GLubyte frenteTrian[]      = {10,9,12};
+static GLubyte dirTrian[]         = {9,6,12};
+static GLubyte esqTrian[]         = {10,11,12};
+
 
 
 static int eixoy, eixox;
@@ -99,6 +104,19 @@ void display(void){
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, fundoIndices);
 
 
+  glColor3f (CANELA); /* triang */
+  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, fundoTrian);
+
+  glColor3f (CANELA); /* triang */
+  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, frenteTrian);
+
+   glColor3f (CANELA); /* triang */
+  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, dirTrian);
+
+  glColor3f (CANELA); /* triang */
+  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, esqTrian);
+
+
 
 
   glDisableClientState (GL_VERTEX_ARRAY);
@@ -142,5 +160,7 @@ void keyboard(unsigned char key, int x, int y){
     glOrtho (-50, 50, -50, 50, -50 , 50);
     glutPostRedisplay();
     break;
+
   }
+
 }

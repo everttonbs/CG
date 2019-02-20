@@ -251,3 +251,9 @@
 	<GL/glu.h>
 	<stdlib.h>
 
+1549739882 source:c:\users\everton\desktop\cg\planetas\planetas.cpp
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
