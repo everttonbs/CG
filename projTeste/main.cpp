@@ -16,7 +16,20 @@ void reshape (int w, int h);
 #define CINZA    0.6, 0.6, 0.6
 #define CANELA   0.82, 0.71, 0.55
 
+
 static GLfloat vertices[42]={
+  0.0, 0.0, 30.0,   // 0
+  30.0, 0.0, 30.0 , // 1
+  30.0, 30.0, 30.0 , // 2
+  0.0, 30.0, 30.0 , // 3
+  0.0, 0.0, 0.0, // 4
+  30.0, 0.0, 0.0,   // 5
+  30.0, 30.0, 0.0 , // 6
+  0.0, 30.0, 0.0 , // 7
+  15.0, 45.0, 15.0 //8
+};
+
+static GLfloat vertices_bkp[42]={
   -30.0,  30.0, 30.0, /* 0 */
   30.0, 30.0, 30.0, /* 1 */
   30.0, 30.0, 30.0, /* 2 */
@@ -30,19 +43,18 @@ static GLfloat vertices[42]={
 
 };
 
-static GLubyte frenteIndices[]    = {0,4,3,1};
-static GLubyte trasIndices[]      = {5,6,7,8};
-static GLubyte esquerdaIndices[]  = {0,5,8,4};
-static GLubyte direitaIndices[]   = {3,7,6,9};
-static GLubyte topoIndices[]      = {0,1,6,5};
-static GLubyte fundoIndices[]     = {3,4,8,7};
-
-static GLubyte fundoTrian[]       = {11,6,12};
-static GLubyte frenteTrian[]      = {10,9,12};
-static GLubyte dirTrian[]         = {9,6,12};
-static GLubyte esqTrian[]         = {10,11,12};
+static GLubyte frenteIndices[]    = {0,1,2,3};
+static GLubyte trasIndices[]      = {5,4,7,6};
+static GLubyte esquerdaIndices[]  = {0,3,7,4};
+static GLubyte direitaIndices[]   = {1,5,6,2};
+static GLubyte topoIndices[]      = {3,2,6,7};
+static GLubyte fundoIndices[]     = {0,4,5,1};
 
 
+static GLubyte fundoTrian[]       = {6,7,8};
+static GLubyte frenteTrian[]      = {3,2,8};
+static GLubyte dirTrian[]         = {2,6,8};
+static GLubyte esqTrian[]         = {7,3,8};
 
 static int eixoy, eixox;
 int largura, altura;
@@ -87,11 +99,11 @@ void display(void){
   glColor3f (AZUL); /* frente */
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, frenteIndices);
 
-  glColor3f (AMARELO); /* esquerda */
-  glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, esquerdaIndices);
-
   glColor3f (VERMELHO); /* tras */
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, trasIndices);
+
+  glColor3f (AMARELO); /* esquerda */
+  glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, esquerdaIndices);
 
   glColor3f (VERDE); /* direita */
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, direitaIndices);
@@ -100,24 +112,19 @@ void display(void){
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, topoIndices);
 
   glColor3f (LARANJA); /* fundo */
-  //glDrawElements(GL_QUADS, 4, GL_UNSIGNED_BYTE, fundoIndices);
   glDrawElements(GL_POLYGON, 4, GL_UNSIGNED_BYTE, fundoIndices);
 
+  glColor3f (CANELA); /* triang */
+  glDrawElements(GL_POLYGON, 3, GL_UNSIGNED_BYTE, fundoTrian);
 
   glColor3f (CANELA); /* triang */
-  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, fundoTrian);
-
-  glColor3f (CANELA); /* triang */
-  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, frenteTrian);
+  glDrawElements(GL_POLYGON, 3, GL_UNSIGNED_BYTE, frenteTrian);
 
    glColor3f (CANELA); /* triang */
-  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, dirTrian);
+  glDrawElements(GL_POLYGON, 3, GL_UNSIGNED_BYTE, dirTrian);
 
   glColor3f (CANELA); /* triang */
-  glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, esqTrian);
-
-
-
+  glDrawElements(GL_POLYGON, 3, GL_UNSIGNED_BYTE, esqTrian);
 
   glDisableClientState (GL_VERTEX_ARRAY);
 
