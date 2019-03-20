@@ -8,36 +8,53 @@ static int year = 0, day = 0;
 
 void init(void){
   glClearColor (0.0,0,0,0);
+
+   glShadeModel (GL_SMOOTH);
+   glEnable(GL_LIGHTING);
+   glEnable(GL_LIGHT0);
+   glEnable(GL_DEPTH_TEST);
 }
 
 
 void display(void){
 
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,1.0,1.0);
+    GLfloat position[] = { 0.0, 0.0, 1.5, 1.0 };
 
-  //cria sol
+	//glClear(GL_COLOR_BUFFER_BIT);
+	//glColor3f(1.0,1.0,1.0);
+	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	//Ponto de luz
+	glPushMatrix ();
+   glRotated ((GLdouble) day, 0.0, 1.5, 1.0);
+   glLightfv (GL_LIGHT0, GL_POSITION, position);
+    glPopMatrix();
+
+  //cria planeta
 	glPushMatrix();
-		glRotatef ((GLfloat) year, 1.0, 0.0, 0.0);
-		glRotatef ((GLfloat) day, 0.0, 0.0, 1.0);
-		glutWireSphere(1.0,20,16);
+		glRotatef ((GLfloat) 0, 1.0, 0.0, 0.0);//Está sem movimento por causao do primeiro parâmetro 0, mude para day
+		glRotatef ((GLfloat) 0, 0.0, 0.0, 1.0);
+		glutSolidSphere(1.0, 50, 50);
+		//glutWireSphere(1.0,20,16);
 	glPopMatrix();
 
-  //cria planeta 1
+  //cria lua 1
 	glPushMatrix();
-		glRotatef ((GLfloat) year, 0.0, 1.0, 0.0);
+		glRotatef ((GLfloat) year, 0.0, 1.0, 0.0); //Movimento de rotação
 		glTranslatef(2.0,0.0,0.0);
 		glRotatef ((GLfloat) day, 0.0, 1.0, 0.0);
-		glutWireSphere(0.2,10,8);
+		glutSolidSphere(0.20, 10, 10);
+		//glutWireSphere(0.2,10,8);
 	glPopMatrix();
 
-//cria planeta 2
+//cria lua 2
 
   glPushMatrix();
     glRotatef ((GLfloat) year, 0.0, -1.0, 0.0);//Movimento de rotação
     glTranslatef(2.5,0.0,0.0); //
     glRotatef ((GLfloat) day, 0.0, 1.0, 0.0);
-    glutWireSphere(0.2, 10, 8);
+    glutSolidSphere(0.20, 10, 10);
+    //glutWireSphere(0.2, 10, 8);
   glPopMatrix();
 
 

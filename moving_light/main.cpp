@@ -27,14 +27,15 @@ void display(void)
    glTranslatef (0.0, 0.0, -5.0);
 
    glPushMatrix ();
-   glRotated ((GLdouble) spin, 0.0, 1.0, 0.0);
+   glRotated ((GLdouble) 90, 0.0, 1.0, 0.0);
    glLightfv (GL_LIGHT0, GL_POSITION, position);
 
    glTranslated (0.0, 0.0, 1.5);
    glDisable (GL_LIGHTING);
-   //glColor3f (0.0, 1.0, 1.0);
+   glColor3f (0.0, 1.0, 1.0);
    glColor3f (139.0, 0.0, 0.0);
-   glutWireCube (0.1);
+   //glutWireCube (0.1);
+   glutSolidSphere(0.20, 10, 10);
    glEnable (GL_LIGHTING);
    glPopMatrix ();
 

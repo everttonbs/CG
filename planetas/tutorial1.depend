@@ -257,3 +257,9 @@
 	<GL/glu.h>
 	<stdlib.h>
 
+1553084194 source:e:\repositoriosgit\cg\planetas\planetas.cpp
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+

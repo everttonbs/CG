@@ -228,3 +228,8 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1553077641 source:e:\repositoriosgit\cg\moving_light\main.cpp
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
