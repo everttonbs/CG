@@ -22,9 +22,8 @@ void display(void)
     glClear(GL_COLOR_BUFFER_BIT);
 
     //Cadastrar os pontos no sentido anti-horário
-    //glBegin(GL_POLYGON);
     glBegin(GL_QUADS);
-    //glBegin(GL_QUAD_STRIP);
+
         glColor3f(1.0f, 1.0f, 1.0f);
 
         glVertex2f(0.0f, 50.0f);
@@ -75,7 +74,6 @@ void GerenciaTeclado(unsigned char key, int x1, int y1)
         break;
 
     }
-
     glutPostRedisplay();
 
 }
@@ -96,4 +94,6 @@ int main(int argc, char** argv){
 
     return 0;
 }
+
+
 
