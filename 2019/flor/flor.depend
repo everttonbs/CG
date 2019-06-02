@@ -229,3 +229,10 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1559483979 source:d:\codeblocks_projeto\cg\flor\main.cpp
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<iostream>
+
