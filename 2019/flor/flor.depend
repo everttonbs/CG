@@ -236,3 +236,10 @@
 	<stdlib.h>
 	<iostream>
 
+1559483979 source:d:\codeblocks_projeto\cg\2019\flor\main.cpp
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<iostream>
+
