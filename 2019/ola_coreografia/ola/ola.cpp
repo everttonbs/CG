@@ -14,7 +14,7 @@ static float y4 = 15.0f;
 static float y5 = 15.0f;
 static float y6 = 15.0f;
 static float y7 = 15.0f;
-static float z = 50.0f;
+static float z = 15.0f;
 
 using namespace std;
 
@@ -91,40 +91,42 @@ void Up(int value)
 {
     y0 += 5;
 
-    if(y0 > 0 && y1 < 350)
+    if(y0 > 0 && y1 < 200 && y0<200)
         y1 += 5;
     else
         y1 = y;
 
-    if(y0 > 50 && y2 < 350)
+    if(y0 > 50 && y2 < 200 && y0<250)
         y2+= 5;
     else
         y2 = y;
 
-    if(y0 > 100 && y3 < 350)
+    if(y0 > 100 && y3 < 200 && y0<300)
         y3+=5;
     else
         y3 = y;
 
-    if(y0 > 150 && y4 < 350)
+    if(y0 > 150 && y4 && y0<350)
         y4+= 5;
     else
         y4 = y;
 
-    if(y0 > 200 && y5 < 350)
+    if(y0 > 200 && y5 < 200 && y0<400)
         y5+= 5;
     else
         y5 = y;
 
-    if(y0 > 250 && y6 < 350)
+    if(y0 > 250 && y6 < 200 && y0<450)
         y6+= 5;
     else
         y6 = y;
 
-    if(y0 > 300 && y7 < 350)
+    if(y0 > 300 && y7 < 200 && y0<500)
         y7+= 5;
+
     else
         y7 = y;
+
 
 
     glutPostRedisplay();
@@ -145,7 +147,8 @@ void GerenciaTeclado(unsigned char key, int x1, int y1)
         //y = 250.0f;
         //x += 5;
         //y += 5;
-        glutTimerFunc(33, Up, 1);
+        y0 = 0;
+        glutTimerFunc(30, Up, 1);
 
 
         break;
