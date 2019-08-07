@@ -248,3 +248,12 @@
 	<stdlib.h>
 	<iostream>
 
+1561741917 source:e:\repositoriosgit\cg\2019\ola_coreografia\ola\ola.cpp
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	<stdio.h>
+
